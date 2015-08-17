@@ -92,7 +92,7 @@ public class ClientApp extends Application {
 		
  
 ```
-
+#### 
 - 注意此处替换 "tencent222222" 为  "tencent你申请到的appId"
 ```xml
 <!-- QQ分享  -->
