@@ -93,8 +93,9 @@ public class ClientApp extends Application {
  
 ```
 
+- 注意此处替换 "tencent222222" 为  "tencent你申请到的appId"
 ```xml
-<!-- QQ分享 注意此处替换 "tencent222222" 为  "tencent你申请到的appId"  -->
+<!-- QQ分享  -->
 <activity
             android:name="com.tencent.connect.common.AssistActivity"
             android:screenOrientation="portrait"
