@@ -170,6 +170,7 @@ public void qqTest(){
 ```      
 #### Step 7: 获取回调
 - 只需注册广播即可，如下：
+- 如果不需要获取回调,step 7 可以忽略
 
 ```java
  public void registerBroadCast() {
