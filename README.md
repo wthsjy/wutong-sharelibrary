@@ -207,5 +207,6 @@ public void qqTest(){
         }
     }
 ```  
-
+#### 存在问题
+- 在androidstudio 中查看源码无法看到 方法注释,请在此网页查看！ [使用方法文档](https://github.com/mw258176257/wutong-sharelibrary/blob/master/sharelibrary/src/main/java/com/wutong/share/library/RefineitShareLib.java)
 ## 联系方式 QQ: 258176257
