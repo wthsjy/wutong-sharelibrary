@@ -134,25 +134,25 @@ public class ClientApp extends Application {
 ```java
 public void sinaTest(){
 	//新浪微博分享 只分享文字
-	RefineitShareLib.getInstance().shareSinaText( activity,  content);
+	RefineitShareLib.getInstance().shareSinaText(Activity activity,  String content);
 	//新浪微博分享 只分享图片
-        RefineitShareLib.getInstance().shareSinaImage( activity,  bitmap);
+        RefineitShareLib.getInstance().shareSinaImage(Activity activity, Bitmap bitmap);
 	//新浪微博分享 分享图片与文字并存
-	RefineitShareLib.getInstance().shareImagWithText( activity,  content,  bitmap);
+	RefineitShareLib.getInstance().shareImagWithText( Activity activity,  String content, Bitmap bitmap);
 	//新浪微博分享 分享网页
-        RefineitShareLib.getInstance().shareSinaWeb( activity,  title,  description,
-                              thumbBitmap,  bitmap,  actionUrl);
+        RefineitShareLib.getInstance().shareSinaWeb(Activity activity,  String title,  String description,
+                             Bitmap thumbBitmap, Bitmap bitmap, String actionUrl);
  }      
 ```
 ```java
 public void weChatTest(){
 	//微信分享  只有文字
-	RefineitShareLib.getInstance().shareWeChatText( context,  isFriendCircle,  title) ;
+	RefineitShareLib.getInstance().shareWeChatText(Context context, boolean isFriendCircle,  String title) ;
 	//微信分享  只有图片
-        RefineitShareLib.getInstance().shareWeChatImage( context,  isFriendCircle,  bitmap);
+        RefineitShareLib.getInstance().shareWeChatImage(Context context,boolean isFriendCircle, Bitmap bitmap);
 	//微信分享  网页 对象
-	RefineitShareLib.getInstance().shareWeChatWeb( context,  isFriendCircle, 
-						title,  description,  webpageUrl,  thumbBitmap);
+	RefineitShareLib.getInstance().shareWeChatWeb(Context context, boolean isFriendCircle, 
+						String title,  String description,  String webpageUrl,Bitmap thumbBitmap);
 }		
 ```
 ```java
