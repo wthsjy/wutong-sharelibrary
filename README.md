@@ -2,13 +2,13 @@
 
 简化 QQ,QZone,微信，sina微博 分享 类库
 
-#### 功能
+## 功能
 
--QQ,QZone分享 
--微信分享
--微博分享
--...
--持续更新中...
+- QQ QZone分享 
+- 微信分享
+- 微博分享
+- ...
+- 持续更新中...
 
 ## 更新日志
 
@@ -26,7 +26,7 @@ Step 1: Gradle  依赖
 
 ```groovy
  compile 'com.wutong.share.library:Refineit-sharelibrary:1.0'
-
+```
 ===================
 
 
