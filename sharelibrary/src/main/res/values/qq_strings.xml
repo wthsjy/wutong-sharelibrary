@@ -1,0 +1,5 @@
+<resources>
+    <string name="qq_share_success">分享成功</string>
+    <string name="qq_share_fail">分享失败</string>
+    <string name="qq_share_cancel">取消分享</string>
+</resources>

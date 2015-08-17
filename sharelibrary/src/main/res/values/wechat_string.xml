@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wechat_errcode_success">分享成功</string>
+    <string name="wechat_errcode_cancel">取消分享</string>
+    <string name="wechat_errcode_deny">发送被拒绝</string>
+    <string name="wechat_errcode_unknown">发送返回</string>
+</resources>
