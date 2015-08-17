@@ -62,7 +62,10 @@ public class ClientApp extends Application {
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
 
-#### Step 4: 在 AndroidManifest.xml 添加必要的Activity 注册
+#### Step 4: 添加微信的类文件
+添加文件  你的包名.wxapi.WXEntryActivity，注意 WXEntryActivity 需要  extends RefineitShareWeChatActivity 
+
+#### Step 5: 在 AndroidManifest.xml 添加必要的Activity 注册
 
 ```xml
 <!-- 新浪微博分享 -->
@@ -126,8 +129,6 @@ public class ClientApp extends Application {
  
 ```
 
-#### Step 5: 添加微信的类文件
-添加文件  你的包名.wxapi.WXEntryActivity，注意 WXEntryActivity 需要  extends RefineitShareWeChatActivity 
 
 #### Step 6: 调用方法
 ```java
