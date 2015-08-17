@@ -20,7 +20,7 @@
 ## 如何使用？
 
 
-####Step 1: Gradle  依赖
+#### Step 1: Gradle  依赖
 
 在 build.gradle 中添加:
 
@@ -28,17 +28,16 @@
  compile 'com.wutong.share.library:Refineit-sharelibrary:1.0'
 ```
 
-####Step 2: 在Application 中初始化
+#### Step 2: 在Application 中初始化
 
 ```java
 public class ClientApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
         initShare();
     }
-
+    
     private void initShare() {
         RefineitShareConfiguration configuration = new RefineitShareConfiguration.Builder(this)
                 .configSina("appKey", "此参数不需要，只做保留")
@@ -50,14 +49,12 @@ public class ClientApp extends Application {
     }
 }
 
-
 ```
 
-Step 3: 在 AndroidManifest.xml 中添加权限
-----
+#### Step 3: 在 AndroidManifest.xml 中添加权限
 
 ```xml
- <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -65,8 +62,7 @@ Step 3: 在 AndroidManifest.xml 中添加权限
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
 
-Step 3: 在 AndroidManifest.xml 添加必要的Activity 注册
-----
+#### Step 4: 在 AndroidManifest.xml 添加必要的Activity 注册
 
 ```xml
 <!-- 新浪微博分享 -->
@@ -82,10 +78,9 @@ Step 3: 在 AndroidManifest.xml 添加必要的Activity 注册
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-		
-		
  
 ```
+
 ```xml
 <!-- 微信分享 -->
     <activity
@@ -130,44 +125,41 @@ Step 3: 在 AndroidManifest.xml 添加必要的Activity 注册
  
 ```
 
-Step 4: 添加微信的类文件  你的包名.wxapi.WXEntryActivity，注意 WXEntryActivity 需要  extends RefineitShareWeChatActivity 
-----
+#### Step 4: 添加微信的类文件  你的包名.wxapi.WXEntryActivity，注意 WXEntryActivity 需要  extends RefineitShareWeChatActivity 
 
-Step 5: 调用方法
+#### Step 5: 调用方法
 ```java
-		//新浪微博分享 只分享文字
-		RefineitShareLib.getInstance().shareSinaText(Activity activity, String content);
-		//新浪微博分享 只分享图片
-        RefineitShareLib.getInstance().shareSinaImage(Activity activity, Bitmap bitmap);
-		//新浪微博分享 分享图片与文字并存
-		RefineitShareLib.getInstance().shareImagWithText(Activity activity, String content, Bitmap bitmap);
-		//新浪微博分享 分享网页
-        RefineitShareLib.getInstance().shareSinaWeb(Activity activity, String title, String description,
-                             Bitmap thumbBitmap, Bitmap bitmap, String actionUrl);
+	//新浪微博分享 只分享文字
+	RefineitShareLib.getInstance().shareSinaText( activity,  content);
+	//新浪微博分享 只分享图片
+        RefineitShareLib.getInstance().shareSinaImage( activity,  bitmap);
+	//新浪微博分享 分享图片与文字并存
+	RefineitShareLib.getInstance().shareImagWithText( activity,  content,  bitmap);
+	//新浪微博分享 分享网页
+        RefineitShareLib.getInstance().shareSinaWeb( activity,  title,  description,
+                              thumbBitmap,  bitmap,  actionUrl);
         
 ```
 ```java
-		//微信分享  只有文字
-		RefineitShareLib.getInstance().shareWeChatText(Context context, boolean isFriendCircle, String title) ;
-		//微信分享  只有图片
-        RefineitShareLib.getInstance().shareWeChatImage(Context context, boolean isFriendCircle, Bitmap bitmap);
-		//微信分享  网页 对象
-		RefineitShareLib.getInstance().shareWeChatWeb(Context context, boolean isFriendCircle, 
-							String title, String description, String webpageUrl, Bitmap thumbBitmap);
+	//微信分享  只有文字
+	RefineitShareLib.getInstance().shareWeChatText( context,  isFriendCircle,  title) ;
+	//微信分享  只有图片
+        RefineitShareLib.getInstance().shareWeChatImage( context,  isFriendCircle,  bitmap);
+	//微信分享  网页 对象
+	RefineitShareLib.getInstance().shareWeChatWeb( context,  isFriendCircle, 
+						title,  description,  webpageUrl,  thumbBitmap);
 		
-      
-----
+```
 ```java
-		// 分享到QQ好友，纯图片
-		RefineitShareLib.getInstance().shareQQImage(Context context, String localPath) ;
-		//分享到QQ好友，默认 支持类型见参数说明
+	// 分享到QQ好友，纯图片
+	RefineitShareLib.getInstance().shareQQImage(Context context, String localPath) ;
+	//分享到QQ好友，默认 支持类型见参数说明
         RefineitShareLib.getInstance().shareQQ(Context context, String title, String 
-								targetUrl, String summary, String imageUrl);
-		//分享到QQ空间，默认 支持类型见参数说明
-		RefineitShareLib.getInstance().shareQQZone(Context context, String title, String targetUrl, 
-								String summary, ArrayList<String> imageArrayList);
+						targetUrl, String summary, String imageUrl);
+	//分享到QQ空间，默认 支持类型见参数说明
+	RefineitShareLib.getInstance().shareQQZone(Context context, String title, String targetUrl, 
+						String summary, ArrayList<String> imageArrayList);
 
 		
-      
-----
+```      
 ## 联系方式 QQ: 258176257
