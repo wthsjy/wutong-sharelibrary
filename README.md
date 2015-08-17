@@ -125,10 +125,12 @@ public class ClientApp extends Application {
  
 ```
 
-#### Step 4: 添加微信的类文件  你的包名.wxapi.WXEntryActivity，注意 WXEntryActivity 需要  extends RefineitShareWeChatActivity 
+#### Step 5: 添加微信的类文件
+添加文件  你的包名.wxapi.WXEntryActivity，注意 WXEntryActivity 需要  extends RefineitShareWeChatActivity 
 
-#### Step 5: 调用方法
+#### Step 6: 调用方法
 ```java
+public void sinaTest(){
 	//新浪微博分享 只分享文字
 	RefineitShareLib.getInstance().shareSinaText( activity,  content);
 	//新浪微博分享 只分享图片
@@ -138,9 +140,10 @@ public class ClientApp extends Application {
 	//新浪微博分享 分享网页
         RefineitShareLib.getInstance().shareSinaWeb( activity,  title,  description,
                               thumbBitmap,  bitmap,  actionUrl);
-        
+ }      
 ```
 ```java
+public void weChatTest(){
 	//微信分享  只有文字
 	RefineitShareLib.getInstance().shareWeChatText( context,  isFriendCircle,  title) ;
 	//微信分享  只有图片
@@ -148,9 +151,10 @@ public class ClientApp extends Application {
 	//微信分享  网页 对象
 	RefineitShareLib.getInstance().shareWeChatWeb( context,  isFriendCircle, 
 						title,  description,  webpageUrl,  thumbBitmap);
-		
+}		
 ```
 ```java
+public void qqTest(){
 	// 分享到QQ好友，纯图片
 	RefineitShareLib.getInstance().shareQQImage(Context context, String localPath) ;
 	//分享到QQ好友，默认 支持类型见参数说明
@@ -159,7 +163,7 @@ public class ClientApp extends Application {
 	//分享到QQ空间，默认 支持类型见参数说明
 	RefineitShareLib.getInstance().shareQQZone(Context context, String title, String targetUrl, 
 						String summary, ArrayList<String> imageArrayList);
-
+}
 		
 ```      
 ## 联系方式 QQ: 258176257
