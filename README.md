@@ -167,4 +167,43 @@ public void qqTest(){
 }
 		
 ```      
+#### Step 7: 获取回调
+- 只需注册广播即可，如下：
+
+```java
+ public void registerBroadCast() {
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(RefineitShareCode.IntentAction.SINA_SHARE);
+        filter.addAction(RefineitShareCode.IntentAction.QQ_SHARE);
+        filter.addAction(RefineitShareCode.IntentAction.WECHAT_SHARE);
+        registerReceiver(myBroadCastReciver, filter);
+    }
+    
+ private class MyBroadCastReciver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            //分享的action
+            String action = intent.getAction();
+            //分享的状态value
+            String value = intent.getStringExtra(RefineitShareCode.CallBackCode.CODE_KEY);
+
+            if (RefineitShareCode.IntentAction.SINA_SHARE.equals(action)) {
+                Toast.makeText(MainActivity.this, value, Toast.LENGTH_SHORT).show();
+                //TODO 此处按具体场景对value 进行判断，value有以下3个值
+                //TODO RefineitShareCode.CallBackCode.CODE_VALUE_OK，
+                //TODO RefineitShareCode.CallBackCode.CODE_VALUE_FAIL,
+                //TODO RefineitShareCode.CallBackCode.CODE_VALUE_CANCEL
+
+
+            } else if (RefineitShareCode.IntentAction.QQ_SHARE.equals(action)) {
+                Toast.makeText(MainActivity.this, value, Toast.LENGTH_SHORT).show();
+                
+            } else if (RefineitShareCode.IntentAction.WECHAT_SHARE.equals(action)) {
+            
+                Toast.makeText(MainActivity.this, value, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+```  
+
 ## 联系方式 QQ: 258176257
