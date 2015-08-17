@@ -20,23 +20,15 @@
 ## 如何使用？
 
 
-Step 1: Gradle  依赖
+####Step 1: Gradle  依赖
 
 在 build.gradle 中添加:
 
 ```groovy
  compile 'com.wutong.share.library:Refineit-sharelibrary:1.0'
 ```
-===================
 
-
-
-
-
-
-
-Step 2: 在Application 中初始化
-----
+####Step 2: 在Application 中初始化
 
 ```java
 public class ClientApp extends Application {
