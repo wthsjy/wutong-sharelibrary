@@ -19,7 +19,7 @@
 在 build.gradle 中添加:
 
 ```groovy
- compile 'com.wutong.share.library:Refineit-sharelibrary:1.0'
+ compile 'com.wutong.share.library:Refineit-sharelibrary:1.0.2'
 ```
 
 #### Step 2: 在Application 中初始化
@@ -202,7 +202,9 @@ public void qqTest(){
     }
 ```  
 ## 更新日志
+#### v1.0.2
 
+- 添加微博相关的jar
 #### v1.0
 
 - 初始导入
