@@ -32,7 +32,7 @@
 在 build.gradle 中添加:
 
 ```groovy
- compile 'com.wutong.share.library:Refineit-sharelibrary:1.0.2'
+ compile 'com.wutong.share.library:Refineit-sharelibrary:1.0.4'
 ```
 
 #### Step 2: 在Application 中初始化
