@@ -1,6 +1,19 @@
 # Refineit-sharelibrary
 
 简化 QQ,QZone,微信，sina微博 分享 类库
+请对应 targetSdkVersion,此库目前1.0.4 支持 Android 5.1, appcompat-v7:22.2.1
+
+## 更新日志
+#### v1.0.4
+
+- 修改支持系统版本为 Android 5.1, appcompat-v7:22.2.1。
+
+#### v1.0.2
+
+- 添加微博相关的jar
+#### v1.0
+
+- 初始导入
 
 ## 功能
 
@@ -201,13 +214,7 @@ public void qqTest(){
         }
     }
 ```  
-## 更新日志
-#### v1.0.2
 
-- 添加微博相关的jar
-#### v1.0
-
-- 初始导入
  
 
 ## 存在问题
