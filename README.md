@@ -4,6 +4,9 @@
 - 请对应 targetSdkVersion>=22,此库目前1.0.4 支持 Android 5.1, appcompat-v7:22.2.1
 
 ## 更新日志
+#### v1.2.0
+
+- 修复部分分享BUG
 #### v1.0.4
 
 - 修改支持系统版本为 Android 5.1, appcompat-v7:22.2.1。
@@ -32,7 +35,7 @@
 在 build.gradle 中添加:
 
 ```groovy
- compile 'com.wutong.share.library:Refineit-sharelibrary:1.0.4'
+ compile 'com.wutong.share.library:Refineit-sharelibrary:1.2.0'
 ```
 
 #### Step 2: 在Application 中初始化
