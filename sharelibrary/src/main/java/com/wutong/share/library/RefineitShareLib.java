@@ -127,11 +127,11 @@ public class RefineitShareLib {
      *
      * @param context        context
      * @param isFriendCircle 是否发布到朋友圈
-     * @param bitmap         图片
+     * @param localImagePath         本地图片
      */
-    public void shareWeChatImage(Context context, boolean isFriendCircle, Bitmap bitmap) {
+    public void shareWeChatImage(Context context, boolean isFriendCircle, String localImagePath) {
         WeChatShareUtils utils = new WeChatShareUtils();
-        utils.shareWeChatImage(context, isFriendCircle, bitmap);
+        utils.shareWeChatImage(context, isFriendCircle, localImagePath);
 
     }
 
@@ -166,7 +166,7 @@ public class RefineitShareLib {
 
 
     /**
-     * 分享到QQ好友，默认 支持类型见参数说明
+     * 分享到QQ好友，纯图片
      *
      * @param context   context
      * @param localPath 是本地 的存储路径
@@ -177,7 +177,7 @@ public class RefineitShareLib {
     }
 
     /**
-     * 分享到QQ好友，默认 支持类型见参数说明
+     * 分享到QQ空间，默认 支持类型见参数说明
      *
      * @param context        context
      * @param title          标题，必填

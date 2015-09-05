@@ -2,8 +2,10 @@ package com.wutong.share.library.wechat;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.tencent.mm.sdk.modelbase.BaseReq;
@@ -16,16 +18,19 @@ import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.tencent.open.utils.Util;
 import com.wutong.share.library.R;
 import com.wutong.share.library.RefineitShareCode;
 import com.wutong.share.library.RefineitShareLib;
+
+import java.io.File;
 
 /**
  * 微信分享父类
  * Created by wutong on 2015/8/16.
  */
 public class RefineitShareWeChatActivity extends AppCompatActivity implements IWXAPIEventHandler {
-    private static final int THUMB_SIZE = 150;
+    private static final int THUMB_SIZE = 100;
     public static final String SHARE_TYPE_TEXT = "share_type_text";
     public static final String SHARE_TYPE_IMAGE = "share_type_image";
     public static final String SHARE_TYPE_WEB = "share_type_web";
@@ -36,6 +41,7 @@ public class RefineitShareWeChatActivity extends AppCompatActivity implements IW
     private String title;
     private Bitmap bitmap;
     private String webpageUrl;
+    private String localImagePath;
     private String description;
     private boolean isFriendCircle;
 
@@ -45,6 +51,7 @@ public class RefineitShareWeChatActivity extends AppCompatActivity implements IW
         type = getIntent().getStringExtra("type");
         title = getIntent().getStringExtra("title");
         webpageUrl = getIntent().getStringExtra("webpageUrl");
+        localImagePath = getIntent().getStringExtra("localImagePath");
         description = getIntent().getStringExtra("description");
         bitmap = getIntent().getParcelableExtra("bitmap");
         isFriendCircle = getIntent().getBooleanExtra("isFriendCircle", true);
@@ -69,6 +76,7 @@ public class RefineitShareWeChatActivity extends AppCompatActivity implements IW
         }
         //立刻关闭此界面
         finish();
+
     }
 
 
@@ -141,15 +149,22 @@ public class RefineitShareWeChatActivity extends AppCompatActivity implements IW
     }
 
     /**
-     * 分享纯文字
+     * 分享纯图片
      */
     protected void shareWeChatImage() {
-        WXImageObject imgObj = new WXImageObject(bitmap);
+        File file = new File(localImagePath);
+        if (!file.exists()) {
+            Log.e("RefineitShareWeChat","找不到目标图片");
+            return;
+        }
+        WXImageObject imgObj = new WXImageObject();
+        imgObj.setImagePath(localImagePath);
 
         WXMediaMessage msg = new WXMediaMessage();
         msg.mediaObject = imgObj;
 
-        Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);
+        Bitmap bmp = BitmapFactory.decodeFile(localImagePath);
+        Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp, THUMB_SIZE, THUMB_SIZE, true);
         msg.thumbData = WeChatUtil.bmpToByteArray(thumbBmp, true);  // 设置缩略图
 
         SendMessageToWX.Req req = new SendMessageToWX.Req();

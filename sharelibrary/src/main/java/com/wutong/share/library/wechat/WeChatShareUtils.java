@@ -30,12 +30,12 @@ public class WeChatShareUtils {
 
     }
 
-    public void shareWeChatImage(Context context, boolean isFriendCircle, Bitmap bitmap) {
+    public void shareWeChatImage(Context context, boolean isFriendCircle, String localImagePath) {
         try {
             Intent intent = new Intent(context, Class.forName(context.getPackageName()
                     + ".wxapi.WXEntryActivity"));
             intent.putExtra("isFriendCircle", isFriendCircle);
-            intent.putExtra("bitmap", bitmap);
+            intent.putExtra("localImagePath", localImagePath);
             intent.putExtra("type", RefineitShareWeChatActivity.SHARE_TYPE_IMAGE);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
