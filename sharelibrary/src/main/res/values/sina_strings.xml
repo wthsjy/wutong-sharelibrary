@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">WeiboSDKDemo</string>
-
+  
     <!-- 功能列表 -->
     <string name="weibosdk_demo_feature_oauth">微博授权</string>
     <string name="weibosdk_demo_feature_share">分享到微博</string>
