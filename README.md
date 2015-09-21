@@ -4,7 +4,7 @@
 - 请对应 targetSdkVersion>=22, Android 5.1, appcompat-v7:22.2.1
 
 ## 更新日志
-#### v1.3.0
+#### v1.4.0
 
 - 替换最新的新浪sdk
 
@@ -26,7 +26,7 @@
 在 build.gradle 中添加:
 
 ```groovy
- compile 'com.wutong.share.library:Refineit-sharelibrary:1.3.0'
+ compile 'com.wutong.share.library:Refineit-sharelibrary:1.4.0'
 ```
 
 #### Step 2: 在Application 中初始化
