@@ -1,3 +1,6 @@
+# @Deprecated 
+
+
 # Refineit-sharelibrary
 
 简化 QQ,QZone,微信，sina微博 分享 类库
